@@ -20,6 +20,7 @@ namespace API.DataObjects.Entities
         public string LastActivity { get; set; }
         public string Comments { get; set; }
         public bool? Active { get; set; }
+        public Guid? OrgId { get; set; }
 
         public ICollection<UserRoles> UserRoles { get; set; }
     }

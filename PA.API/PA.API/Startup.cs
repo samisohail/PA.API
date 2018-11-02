@@ -91,23 +91,14 @@ namespace PA.API
                         ValidIssuer = _validIssuer,
                         IssuerSigningKey = _signingKey
                     };
-                }).AddJwtBearer(options =>
-                {
                     options.Events = new JwtBearerEvents
                     {
-                        OnTokenValidated = context =>
-                        {
-                            // Check if the user has an OID claim
-                            if (!context.Principal.HasClaim(c => c.Type == "http://schemas.microsoft.com/identity/claims/objectidentifier"))
-                            {
-                                context.Fail($"The claim 'oid' is not present in the token.");
-                            }
-
+                        OnTokenValidated = async context =>
+                        {                            
                             System.Security.Claims.ClaimsPrincipal userPrincipal = context.Principal;
                         }
                     };
-                });
-            
+                });            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

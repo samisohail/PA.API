@@ -12,7 +12,7 @@ namespace API.DataObjects.Entities
         public string ContactEmail { get; set; }
         public string ContactPhone { get; set; }
         public DateTime? CreatedOn { get; set; }
-        public long CreatedBy { get; set; }
+        public Guid? CreatedBy { get; set; }
         public DateTime? ModifiedOn { get; set; }
         public long? ModifiedBy { get; set; }
         public string LastActivityType { get; set; }

@@ -5,6 +5,6 @@ namespace API.Services.Contracts
 {
     public interface IOrgService
     {
-        Task<OrganisationDto> CreateOrganisation(OrganisationDto organisation);
+        Task<OrganisationDto> CreateOrganisation(OrganisationDto organisation, string userId);
     }
 }

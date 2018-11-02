@@ -3,9 +3,9 @@ using API.DataObjects.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace API.DataAccess.DataContext
+namespace API.DataAccess.Entities
 {
-    public partial class PA24Context : DbContext, IPA24Context
+    public partial class PA24Context : DbContext
     {
         public PA24Context()
         {
@@ -38,8 +38,8 @@ namespace API.DataAccess.DataContext
         {
             if (!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-//                optionsBuilder.UseSqlServer("Server=haier-pc\\sqlexpress;Database=PA24;Trusted_Connection=True;");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Server=haier-pc\\sqlexpress;Database=PA24;Trusted_Connection=True;");
             }
         }
 

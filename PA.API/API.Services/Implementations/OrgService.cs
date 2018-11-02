@@ -15,7 +15,7 @@ namespace API.Services.Implementations
         {
             _organisationResposiory = organisationRepository;
         }
-        public async Task<OrganisationDto> CreateOrganisation(OrganisationDto organisationDto)
+        public async Task<OrganisationDto> CreateOrganisation(OrganisationDto organisationDto, string userId)
         {
             var organisation = new Organisations
             {
@@ -24,12 +24,12 @@ namespace API.Services.Implementations
                 Comments = organisationDto.Comments,
                 ContactEmail = organisationDto.Email,
                 ContactPhone = organisationDto.Phone,
-                CreatedBy = 1,
+                CreatedBy = ,
                 CreatedOn = DateTimeHelper.Instance.GetCurrentDate(),
                 Description = organisationDto.Description,
                 LastActivityType = "I",
                 Name = organisationDto.Name
-                           };
+            };
             _organisationResposiory.CreateOrganisation(organisation);
             await _organisationResposiory.SaveAsync();
             return organisationDto;
